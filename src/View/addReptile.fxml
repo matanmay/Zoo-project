@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" styleClass="background" stylesheets="/View/mycss.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View.addReptile">
+   <children>
+      <Button id="btnAddReptile" fx:id="btnAddReptile" layoutX="163.0" layoutY="406.0" mnemonicParsing="false" onMouseClicked="#addReptile" styleClass="buttonStyle" text="Add Reptile" /> 
+     
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="57.0" prefHeight="38.0" prefWidth="275.0" text="Add Reptile" textAlignment="CENTER" textFill="#141544" underline="true">
+         <font>
+            <Font name="Sitka Small" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="122.0" text="Name">
+       <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="59.0" layoutY="214.0" text="Gender">
+       <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <TextField id="txtFName" fx:id="txtName" layoutX="157.0" layoutY="120.0" prefHeight="26.0" prefWidth="174.0" />
+      <ComboBox id="comboBoxFood" fx:id="animalFood" layoutX="157.0" layoutY="256.0" prefHeight="26.0" prefWidth="174.0" styleClass="jfbox" />
+      <ComboBox id="comboBoxSection" fx:id="section" layoutX="157.0" layoutY="301.0" prefHeight="26.0" prefWidth="174.0" styleClass="jfbox" />
+      <DatePicker id="dp" fx:id="dp" layoutX="157.0" layoutY="168.0" />
+      <Label layoutX="57.0" layoutY="174.0" text="Birth Date">
+       <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="60.0" layoutY="261.0" text="Animal Food">
+       <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="61.0" layoutY="305.0" text="Section">
+       <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <RadioButton layoutX="158.0" layoutY="214.0" mnemonicParsing="false" selected="true" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup></RadioButton>
+      <RadioButton layoutX="223.0" layoutY="214.0" mnemonicParsing="false" text="Female" toggleGroup="$gender" />
+      <RadioButton layoutX="296.0" layoutY="214.0" mnemonicParsing="false" selected="true" text="Unknown" toggleGroup="$gender" />
+      <Button id="btnClear" cancelButton="true" layoutX="59.0" layoutY="406.0" mnemonicParsing="false" onMouseClicked="#clearFields" styleClass="buttonStyle" text="Clear" />
+	  <MenuBar id="menuId" fx:id="menuId" layoutX="5.0" layoutY="1.0" prefHeight="39.0" prefWidth="369.0" styleClass="menu-bar">
+        <menus>
+          <Menu mnemonicParsing="false" text="Add">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#movePage" text="Employee" />
+                  <MenuItem mnemonicParsing="false" onAction="#movePage" text="Visitor" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Animal">
+                    <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                      <MenuItem mnemonicParsing="false" onAction="#movePage" text="Bird" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Mammal" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Reptile" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Visit" />
+                    </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#movePage" text="Section" />
+                  <MenuItem mnemonicParsing="false" onAction="#movePage" text="SnackBar" />
+                  <Menu mnemonicParsing="false" text="Snack">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#movePage" text="Food" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Drink" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Action">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#moveAction" text="update" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="remove" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="methods" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="buyingSnack" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="moveVisitorSection" />
+            </items>
+          </Menu>
+         <Menu id="show" mnemonicParsing="false" text="Show">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#moveShow" text="show all" />
+           </items>
+         </Menu>
+           <Menu id="show" mnemonicParsing="false" text="Bonus">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#moveAction" text="snackChart" />
+              <MenuItem mnemonicParsing="false" onAction="#moveAction" text="graphAnimalCounter" />
+           </items>
+         </Menu>
+        </menus>
+      </MenuBar>
+    
+     
+       <MenuBar id="menuId2" fx:id="menuId2" layoutX="-1.0" layoutY="1.0" prefHeight="39.0" prefWidth="377.0" styleClass="menu-bar">
+        <menus>
+          <Menu mnemonicParsing="false" text="Add">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#movePage" text="Employee" />
+                  <MenuItem mnemonicParsing="false" onAction="#movePage" text="Visitor" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Animal">
+                    <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Visit" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Snack">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#movePage" text="Food" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Drink" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Action">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="remove" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="methods" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="buyingSnack" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="moveVisitorSection" />
+            </items>
+          </Menu>
+         <Menu id="show" mnemonicParsing="false" text="Show">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#moveShow" text="show all" />
+           </items>
+         </Menu>
+        </menus>
+      </MenuBar>
+   <ImageView fx:id="logOutIcon" fitHeight="39.0" fitWidth="50.0" layoutX="455.0" layoutY="7.0" onMouseClicked="#logOut" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="/images/logOutIcon.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="homeIcon" fitHeight="39.0" fitWidth="45.0" layoutX="391.0" layoutY="4.0" onMouseClicked="#goToHomePage" pickOnBounds="true" preserveRatio="true">
+      <image>
+            <Image url="/images/homeIcon.png" />
+      </image>
+   </ImageView>
+      <Label layoutX="59.0" layoutY="344.0" text="Dangerous">
+       <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <RadioButton layoutX="163.0" layoutY="344.0" mnemonicParsing="false" selected="true" text="Yes">
+         <toggleGroup>
+            <ToggleGroup fx:id="danger" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="233.0" layoutY="344.0" mnemonicParsing="false" selected="true" text="No" toggleGroup="$danger" />
+      <Label layoutX="58.0" layoutY="370.0" text="Sleep Season">
+       <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <RadioButton layoutX="163.0" layoutY="370.0" mnemonicParsing="false" selected="true" text="Yes">
+         <toggleGroup>
+            <ToggleGroup fx:id="sleepAtSeason" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="233.0" layoutY="370.0" mnemonicParsing="false" selected="true" text="No" toggleGroup="$sleepAtSeason" />
+   </children>
+</AnchorPane>

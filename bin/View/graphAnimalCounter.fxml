@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" styleClass="background" stylesheets="/View/mycss.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View.graphAnimalCounter">
+	<!-- TODO Add Nodes -->
+	
+	  <MenuBar id="menuId" fx:id="menuId" layoutX="5.0" layoutY="1.0" prefHeight="39.0" prefWidth="369.0" styleClass="menu-bar">
+        <menus>
+          <Menu mnemonicParsing="false" text="Add">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#movePage" text="Employee" />
+                  <MenuItem mnemonicParsing="false" onAction="#movePage" text="Visitor" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Animal">
+                    <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                      <MenuItem mnemonicParsing="false" onAction="#movePage" text="Bird" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Mammal" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Reptile" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Visit" />
+                    </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#movePage" text="Section" />
+                  <MenuItem mnemonicParsing="false" onAction="#movePage" text="SnackBar" />
+                  <Menu mnemonicParsing="false" text="Snack">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#movePage" text="Food" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Drink" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Action">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#moveAction" text="update" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="remove" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="methods" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="buyingSnack" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="moveVisitorSection" />
+            </items>
+          </Menu>
+         <Menu id="show" mnemonicParsing="false" text="Show">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#moveShow" text="show all" />
+           </items>
+         </Menu>
+           <Menu id="show" mnemonicParsing="false" text="Bonus">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#moveAction" text="snackChart" />
+              <MenuItem mnemonicParsing="false" onAction="#moveAction" text="graphAnimalCounter" />
+           </items>
+         </Menu>
+        </menus>
+      </MenuBar>
+    
+     
+       <MenuBar id="menuId2" fx:id="menuId2" layoutX="-1.0" layoutY="1.0" prefHeight="39.0" prefWidth="377.0" styleClass="menu-bar">
+        <menus>
+          <Menu mnemonicParsing="false" text="Add">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#movePage" text="Employee" />
+                  <MenuItem mnemonicParsing="false" onAction="#movePage" text="Visitor" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Animal">
+                    <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Visit" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Snack">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#movePage" text="Food" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePage" text="Drink" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Action">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="remove" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="methods" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="buyingSnack" />
+               <MenuItem mnemonicParsing="false" onAction="#moveAction" text="moveVisitorSection" />
+            </items>
+          </Menu>
+         <Menu id="show" mnemonicParsing="false" text="Show">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#moveShow" text="show all" />
+           </items>
+         </Menu>
+        </menus>
+      </MenuBar>
+   <ImageView fx:id="logOutIcon" fitHeight="39.0" fitWidth="50.0" layoutX="455.0" layoutY="7.0" onMouseClicked="#logOut" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="/images/logOutIcon.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="homeIcon" fitHeight="39.0" fitWidth="45.0" layoutX="391.0" layoutY="4.0" onMouseClicked="#goToHomePage" pickOnBounds="true" preserveRatio="true">
+      <image>
+            <Image url="/images/homeIcon.png" />
+      </image>
+   </ImageView>
+      
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="49.0" prefHeight="38.0" prefWidth="372.0" text="Most Visited Animals" textAlignment="CENTER" textFill="#141544" underline="true">
+      <font>
+         <Font name="Sitka Small" size="27.0" />
+      </font>
+   </Label>
+   <BarChart fx:id="animalsCart" layoutX="53.0" layoutY="101.0" prefHeight="265.0" prefWidth="406.0" styleClass="chart-pie-label">
+     <xAxis>
+       <CategoryAxis side="BOTTOM" styleClass="axis"/>
+     </xAxis>
+     <yAxis>
+       <NumberAxis side="LEFT" styleClass="axis"/>
+     </yAxis>
+   </BarChart>
+</AnchorPane>
